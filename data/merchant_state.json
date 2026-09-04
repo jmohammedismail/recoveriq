@@ -1,0 +1,22 @@
+[
+    {
+        "payment_id": "pay_001",
+        "order_exists": true
+    },
+    {
+        "payment_id": "pay_002",
+        "order_exists": false
+    },
+    {
+        "payment_id": "pay_003",
+        "order_exists": false
+    },
+    {
+        "payment_id": "pay_004",
+        "order_exists": true
+    },
+    {
+        "payment_id": "pay_005",
+        "order_exists": false
+    }
+]

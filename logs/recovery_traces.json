@@ -1,0 +1,4142 @@
+{
+  "tr_pay_test_trace_01_2df7f210": {
+    "trace_id": "tr_pay_test_trace_01_2df7f210",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_32b71a",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_59fb01",
+        "parent_span_id": "sp_32b71a",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_c9c235",
+        "parent_span_id": "sp_59fb01",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_06d6dc",
+        "parent_span_id": "sp_c9c235",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_acc165",
+        "parent_span_id": "sp_06d6dc",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T10:53:49.120213+00:00"
+  },
+  "tr_pay_test_trace_01_f69d29ff": {
+    "trace_id": "tr_pay_test_trace_01_f69d29ff",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_abc5c1",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_d7ad9e",
+        "parent_span_id": "sp_abc5c1",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_48c344",
+        "parent_span_id": "sp_d7ad9e",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_8615e2",
+        "parent_span_id": "sp_48c344",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_5b340c",
+        "parent_span_id": "sp_8615e2",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:11:28.730439+00:00"
+  },
+  "tr_pay_test_trace_01_71217b8a": {
+    "trace_id": "tr_pay_test_trace_01_71217b8a",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_42255b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_8c0388",
+        "parent_span_id": "sp_42255b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_c5d3a5",
+        "parent_span_id": "sp_8c0388",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_f0007c",
+        "parent_span_id": "sp_c5d3a5",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_b1d250",
+        "parent_span_id": "sp_f0007c",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:21:43.996255+00:00"
+  },
+  "tr_pay_test_trace_01_a311baed": {
+    "trace_id": "tr_pay_test_trace_01_a311baed",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_826e5b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_e4dbfb",
+        "parent_span_id": "sp_826e5b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_94e319",
+        "parent_span_id": "sp_e4dbfb",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_8f08f5",
+        "parent_span_id": "sp_94e319",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_0910c6",
+        "parent_span_id": "sp_8f08f5",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:23:50.580605+00:00"
+  },
+  "tr_pay_test_trace_01_56c08218": {
+    "trace_id": "tr_pay_test_trace_01_56c08218",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_359647",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_d06369",
+        "parent_span_id": "sp_359647",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_fe44b9",
+        "parent_span_id": "sp_d06369",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_4e21bb",
+        "parent_span_id": "sp_fe44b9",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_a90a12",
+        "parent_span_id": "sp_4e21bb",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:25:17.127544+00:00"
+  },
+  "tr_pay_test_trace_01_0730f1d8": {
+    "trace_id": "tr_pay_test_trace_01_0730f1d8",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_b6c102",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_481957",
+        "parent_span_id": "sp_b6c102",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_1c35b5",
+        "parent_span_id": "sp_481957",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_4ad1bc",
+        "parent_span_id": "sp_1c35b5",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_fb7f8f",
+        "parent_span_id": "sp_4ad1bc",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:26:52.240626+00:00"
+  },
+  "tr_pay_test_trace_01_c4c06a29": {
+    "trace_id": "tr_pay_test_trace_01_c4c06a29",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_6ce484",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_78db74",
+        "parent_span_id": "sp_6ce484",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_eb74b9",
+        "parent_span_id": "sp_78db74",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_f907e8",
+        "parent_span_id": "sp_eb74b9",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_e056fa",
+        "parent_span_id": "sp_f907e8",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:27:12.347945+00:00"
+  },
+  "tr_pay_test_trace_01_9083dd6e": {
+    "trace_id": "tr_pay_test_trace_01_9083dd6e",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_118481",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_263f26",
+        "parent_span_id": "sp_118481",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_1ee5fd",
+        "parent_span_id": "sp_263f26",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_be9b7c",
+        "parent_span_id": "sp_1ee5fd",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_ec69a9",
+        "parent_span_id": "sp_be9b7c",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:27:51.378190+00:00"
+  },
+  "tr_pay_test_trace_01_a46f30ac": {
+    "trace_id": "tr_pay_test_trace_01_a46f30ac",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_848d23",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_56ccd0",
+        "parent_span_id": "sp_848d23",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_b0cc4d",
+        "parent_span_id": "sp_56ccd0",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_e6c9b7",
+        "parent_span_id": "sp_b0cc4d",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_39d13a",
+        "parent_span_id": "sp_e6c9b7",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:29:56.255701+00:00"
+  },
+  "tr_pay_test_trace_01_2636c397": {
+    "trace_id": "tr_pay_test_trace_01_2636c397",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_bc6196",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_26343f",
+        "parent_span_id": "sp_bc6196",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_a142db",
+        "parent_span_id": "sp_26343f",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_d60a59",
+        "parent_span_id": "sp_a142db",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_c447de",
+        "parent_span_id": "sp_d60a59",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:33:42.758299+00:00"
+  },
+  "tr_pay_test_trace_lookup_8a580e4c": {
+    "trace_id": "tr_pay_test_trace_lookup_8a580e4c",
+    "payment_id": "pay_test_trace_lookup",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_30495b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_e41840",
+        "parent_span_id": "sp_30495b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_b45429",
+        "parent_span_id": "sp_e41840",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_1de8e9",
+        "parent_span_id": "sp_b45429",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_b20cfb",
+        "parent_span_id": "sp_1de8e9",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_lookup_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:33:42.761175+00:00"
+  },
+  "tr_pay_test_trace_01_563d6c98": {
+    "trace_id": "tr_pay_test_trace_01_563d6c98",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_a723c7",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_063136",
+        "parent_span_id": "sp_a723c7",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_29236e",
+        "parent_span_id": "sp_063136",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_a3a365",
+        "parent_span_id": "sp_29236e",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_c5abf2",
+        "parent_span_id": "sp_a3a365",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:34:18.011680+00:00"
+  },
+  "tr_pay_test_trace_01_1a43af3a": {
+    "trace_id": "tr_pay_test_trace_01_1a43af3a",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_61b394",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_eaddd3",
+        "parent_span_id": "sp_61b394",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_5573c3",
+        "parent_span_id": "sp_eaddd3",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_2e035d",
+        "parent_span_id": "sp_5573c3",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_e581fb",
+        "parent_span_id": "sp_2e035d",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:35:04.011214+00:00"
+  },
+  "tr_pay_test_trace_01_04674218": {
+    "trace_id": "tr_pay_test_trace_01_04674218",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_8ecd1f",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_4e86d1",
+        "parent_span_id": "sp_8ecd1f",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_e70c27",
+        "parent_span_id": "sp_4e86d1",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_5bc16b",
+        "parent_span_id": "sp_e70c27",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_e3d860",
+        "parent_span_id": "sp_5bc16b",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T11:36:20.483870+00:00"
+  },
+  "tr_pay_test_trace_01_d0bfee5b": {
+    "trace_id": "tr_pay_test_trace_01_d0bfee5b",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_54ecd7",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_fc00b7",
+        "parent_span_id": "sp_54ecd7",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_57b85d",
+        "parent_span_id": "sp_fc00b7",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_04892c",
+        "parent_span_id": "sp_57b85d",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_ae230b",
+        "parent_span_id": "sp_04892c",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T12:21:39.362049+00:00"
+  },
+  "tr_pay_test_trace_01_8854a523": {
+    "trace_id": "tr_pay_test_trace_01_8854a523",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_b55efe",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_087c0e",
+        "parent_span_id": "sp_b55efe",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_af7c18",
+        "parent_span_id": "sp_087c0e",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_4c065d",
+        "parent_span_id": "sp_af7c18",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_995b2c",
+        "parent_span_id": "sp_4c065d",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T12:23:15.869568+00:00"
+  },
+  "tr_pay_test_trace_01_56907cdd": {
+    "trace_id": "tr_pay_test_trace_01_56907cdd",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_d83ba2",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_ae76a0",
+        "parent_span_id": "sp_d83ba2",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_89c28c",
+        "parent_span_id": "sp_ae76a0",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_77f33f",
+        "parent_span_id": "sp_89c28c",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_ddceee",
+        "parent_span_id": "sp_77f33f",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T12:37:48.101198+00:00"
+  },
+  "tr_pay_test_trace_01_100937e0": {
+    "trace_id": "tr_pay_test_trace_01_100937e0",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_945a74",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_ff429f",
+        "parent_span_id": "sp_945a74",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_d70dc1",
+        "parent_span_id": "sp_ff429f",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_c23712",
+        "parent_span_id": "sp_d70dc1",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_90e123",
+        "parent_span_id": "sp_c23712",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T16:04:36.243084+00:00"
+  },
+  "tr_pay_test_trace_01_08e41386": {
+    "trace_id": "tr_pay_test_trace_01_08e41386",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_c5df0b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_e3999d",
+        "parent_span_id": "sp_c5df0b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_351d90",
+        "parent_span_id": "sp_e3999d",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_5632cd",
+        "parent_span_id": "sp_351d90",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_cdd632",
+        "parent_span_id": "sp_5632cd",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T16:55:13.706417+00:00"
+  },
+  "tr_pay_test_trace_01_c43caa87": {
+    "trace_id": "tr_pay_test_trace_01_c43caa87",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_e52e5e",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_45249b",
+        "parent_span_id": "sp_e52e5e",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_75f528",
+        "parent_span_id": "sp_45249b",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_480869",
+        "parent_span_id": "sp_75f528",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_00d9a4",
+        "parent_span_id": "sp_480869",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T16:56:48.115705+00:00"
+  },
+  "tr_pay_test_trace_01_9b57c723": {
+    "trace_id": "tr_pay_test_trace_01_9b57c723",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_30ea10",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_98d80b",
+        "parent_span_id": "sp_30ea10",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_14c9bf",
+        "parent_span_id": "sp_98d80b",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_916499",
+        "parent_span_id": "sp_14c9bf",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_005d57",
+        "parent_span_id": "sp_916499",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T16:58:05.215890+00:00"
+  },
+  "tr_pay_test_trace_01_0900b913": {
+    "trace_id": "tr_pay_test_trace_01_0900b913",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_89f9e9",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_073622",
+        "parent_span_id": "sp_89f9e9",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_8197f5",
+        "parent_span_id": "sp_073622",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_dbfb4f",
+        "parent_span_id": "sp_8197f5",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_e56969",
+        "parent_span_id": "sp_dbfb4f",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:00:15.554992+00:00"
+  },
+  "tr_pay_test_trace_01_448aa815": {
+    "trace_id": "tr_pay_test_trace_01_448aa815",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_ea71ae",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_790c27",
+        "parent_span_id": "sp_ea71ae",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_cd0497",
+        "parent_span_id": "sp_790c27",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_20ab1d",
+        "parent_span_id": "sp_cd0497",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_3daeb4",
+        "parent_span_id": "sp_20ab1d",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:00:52.543815+00:00"
+  },
+  "tr_pay_test_trace_01_3862cb6b": {
+    "trace_id": "tr_pay_test_trace_01_3862cb6b",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_4574da",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_b059d4",
+        "parent_span_id": "sp_4574da",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_3acba3",
+        "parent_span_id": "sp_b059d4",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_85af16",
+        "parent_span_id": "sp_3acba3",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_f35f22",
+        "parent_span_id": "sp_85af16",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:01:29.241572+00:00"
+  },
+  "tr_pay_test_trace_01_9e68426d": {
+    "trace_id": "tr_pay_test_trace_01_9e68426d",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_2c092a",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_3b49cb",
+        "parent_span_id": "sp_2c092a",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_c244b3",
+        "parent_span_id": "sp_3b49cb",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_3caf75",
+        "parent_span_id": "sp_c244b3",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_5a5406",
+        "parent_span_id": "sp_3caf75",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:35:13.301013+00:00"
+  },
+  "tr_pay_test_trace_01_7b3c53de": {
+    "trace_id": "tr_pay_test_trace_01_7b3c53de",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_a1d908",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_9704c9",
+        "parent_span_id": "sp_a1d908",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_128a48",
+        "parent_span_id": "sp_9704c9",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_d50b53",
+        "parent_span_id": "sp_128a48",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_02910b",
+        "parent_span_id": "sp_d50b53",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:36:15.564264+00:00"
+  },
+  "tr_pay_test_trace_01_ec6a9a9b": {
+    "trace_id": "tr_pay_test_trace_01_ec6a9a9b",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_c47a8e",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_92836d",
+        "parent_span_id": "sp_c47a8e",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_ff39cb",
+        "parent_span_id": "sp_92836d",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_56a7b7",
+        "parent_span_id": "sp_ff39cb",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_53252b",
+        "parent_span_id": "sp_56a7b7",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:37:27.886007+00:00"
+  },
+  "tr_pay_test_trace_01_7271c368": {
+    "trace_id": "tr_pay_test_trace_01_7271c368",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_c85c38",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_4398a9",
+        "parent_span_id": "sp_c85c38",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_87c570",
+        "parent_span_id": "sp_4398a9",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_ad9d0a",
+        "parent_span_id": "sp_87c570",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_7a65c1",
+        "parent_span_id": "sp_ad9d0a",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T17:38:21.130449+00:00"
+  },
+  "tr_pay_test_trace_01_9c504b39": {
+    "trace_id": "tr_pay_test_trace_01_9c504b39",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_1f994c",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_993d65",
+        "parent_span_id": "sp_1f994c",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_26b63a",
+        "parent_span_id": "sp_993d65",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_70e2ce",
+        "parent_span_id": "sp_26b63a",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_234db0",
+        "parent_span_id": "sp_70e2ce",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T19:48:07.115275+00:00"
+  },
+  "tr_pay_test_trace_01_fa374dd7": {
+    "trace_id": "tr_pay_test_trace_01_fa374dd7",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_6f3e0b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_955ebe",
+        "parent_span_id": "sp_6f3e0b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_512b76",
+        "parent_span_id": "sp_955ebe",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_62a326",
+        "parent_span_id": "sp_512b76",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_37b12b",
+        "parent_span_id": "sp_62a326",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:16:31.265093+00:00"
+  },
+  "tr_pay_test_trace_01_6588071d": {
+    "trace_id": "tr_pay_test_trace_01_6588071d",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_0cd182",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_af8027",
+        "parent_span_id": "sp_0cd182",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_67897a",
+        "parent_span_id": "sp_af8027",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_d76ae7",
+        "parent_span_id": "sp_67897a",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_a82ba0",
+        "parent_span_id": "sp_d76ae7",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:20:19.584676+00:00"
+  },
+  "tr_pay_test_trace_01_02487005": {
+    "trace_id": "tr_pay_test_trace_01_02487005",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_9ba24b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_42e506",
+        "parent_span_id": "sp_9ba24b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_60a9bc",
+        "parent_span_id": "sp_42e506",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_cb15cf",
+        "parent_span_id": "sp_60a9bc",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_dd2585",
+        "parent_span_id": "sp_cb15cf",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:26:18.299855+00:00"
+  },
+  "tr_pay_test_trace_01_bf539d9b": {
+    "trace_id": "tr_pay_test_trace_01_bf539d9b",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_9c980c",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_56b5c5",
+        "parent_span_id": "sp_9c980c",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_4f561d",
+        "parent_span_id": "sp_56b5c5",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_8feac2",
+        "parent_span_id": "sp_4f561d",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_c3cb05",
+        "parent_span_id": "sp_8feac2",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:42:05.259143+00:00"
+  },
+  "tr_pay_test_trace_01_0692f191": {
+    "trace_id": "tr_pay_test_trace_01_0692f191",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_1c886f",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_79b1b8",
+        "parent_span_id": "sp_1c886f",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_bcd682",
+        "parent_span_id": "sp_79b1b8",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_17258b",
+        "parent_span_id": "sp_bcd682",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_0d9562",
+        "parent_span_id": "sp_17258b",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:51:01.961415+00:00"
+  },
+  "tr_pay_test_trace_01_1911e0e2": {
+    "trace_id": "tr_pay_test_trace_01_1911e0e2",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_fa7eba",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_448997",
+        "parent_span_id": "sp_fa7eba",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_4f716a",
+        "parent_span_id": "sp_448997",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_7b065d",
+        "parent_span_id": "sp_4f716a",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_c97fa1",
+        "parent_span_id": "sp_7b065d",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-01T20:53:25.314795+00:00"
+  },
+  "tr_pay_test_trace_01_8298e683": {
+    "trace_id": "tr_pay_test_trace_01_8298e683",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_15e7d6",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_11c787",
+        "parent_span_id": "sp_15e7d6",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_9add1d",
+        "parent_span_id": "sp_11c787",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_b5e986",
+        "parent_span_id": "sp_9add1d",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_6bf384",
+        "parent_span_id": "sp_b5e986",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T15:45:55.315616+00:00"
+  },
+  "tr_pay_test_trace_01_07e6f281": {
+    "trace_id": "tr_pay_test_trace_01_07e6f281",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_4c48aa",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_bd28b1",
+        "parent_span_id": "sp_4c48aa",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_ff7018",
+        "parent_span_id": "sp_bd28b1",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_96849d",
+        "parent_span_id": "sp_ff7018",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_043014",
+        "parent_span_id": "sp_96849d",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T15:48:19.804070+00:00"
+  },
+  "tr_pay_test_trace_01_b1f7cbdd": {
+    "trace_id": "tr_pay_test_trace_01_b1f7cbdd",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_3c8f3b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_6eb8b1",
+        "parent_span_id": "sp_3c8f3b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_f07893",
+        "parent_span_id": "sp_6eb8b1",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_f76996",
+        "parent_span_id": "sp_f07893",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_938bc4",
+        "parent_span_id": "sp_f76996",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T15:50:42.098710+00:00"
+  },
+  "tr_pay_test_trace_01_88796fac": {
+    "trace_id": "tr_pay_test_trace_01_88796fac",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_9f72be",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_f552a4",
+        "parent_span_id": "sp_9f72be",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_bba477",
+        "parent_span_id": "sp_f552a4",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_bdd3d8",
+        "parent_span_id": "sp_bba477",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_cb4d47",
+        "parent_span_id": "sp_bdd3d8",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:10:08.397772+00:00"
+  },
+  "tr_pay_test_trace_01_e2b43a01": {
+    "trace_id": "tr_pay_test_trace_01_e2b43a01",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_04b047",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_2ef990",
+        "parent_span_id": "sp_04b047",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_b89da7",
+        "parent_span_id": "sp_2ef990",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_1fd72e",
+        "parent_span_id": "sp_b89da7",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_5e6533",
+        "parent_span_id": "sp_1fd72e",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:15:25.309459+00:00"
+  },
+  "tr_pay_test_trace_01_3f99d68e": {
+    "trace_id": "tr_pay_test_trace_01_3f99d68e",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_ff52af",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_f136c5",
+        "parent_span_id": "sp_ff52af",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_d99323",
+        "parent_span_id": "sp_f136c5",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_cc7a4e",
+        "parent_span_id": "sp_d99323",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_82a22b",
+        "parent_span_id": "sp_cc7a4e",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:23:03.361400+00:00"
+  },
+  "tr_pay_test_trace_01_d1671390": {
+    "trace_id": "tr_pay_test_trace_01_d1671390",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_67a405",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_b4ba81",
+        "parent_span_id": "sp_67a405",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_da7ed8",
+        "parent_span_id": "sp_b4ba81",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_b7398a",
+        "parent_span_id": "sp_da7ed8",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_ff8b60",
+        "parent_span_id": "sp_b7398a",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:32:11.831208+00:00"
+  },
+  "tr_pay_test_trace_01_3a4b9b30": {
+    "trace_id": "tr_pay_test_trace_01_3a4b9b30",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_21b88b",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_96812b",
+        "parent_span_id": "sp_21b88b",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_83f312",
+        "parent_span_id": "sp_96812b",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_29e6d0",
+        "parent_span_id": "sp_83f312",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_96341b",
+        "parent_span_id": "sp_29e6d0",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:38:48.615494+00:00"
+  },
+  "tr_pay_test_trace_01_d115a3b4": {
+    "trace_id": "tr_pay_test_trace_01_d115a3b4",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_fb5187",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_88ff5c",
+        "parent_span_id": "sp_fb5187",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_684e53",
+        "parent_span_id": "sp_88ff5c",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_2d0216",
+        "parent_span_id": "sp_684e53",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_022cf1",
+        "parent_span_id": "sp_2d0216",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:41:29.243959+00:00"
+  },
+  "tr_pay_test_trace_01_8dc9a755": {
+    "trace_id": "tr_pay_test_trace_01_8dc9a755",
+    "payment_id": "pay_test_trace_01",
+    "root_operation": "PAYMENT_RECOVERY_LIFECYCLE",
+    "merchant_id": "merchant_demo",
+    "total_latency_ms": 972,
+    "span_count": 5,
+    "spans": [
+      {
+        "span_id": "sp_9f23e2",
+        "parent_span_id": null,
+        "service": "api_gateway",
+        "operation": "HTTP_POST /api/webhook/payment",
+        "start_offset_ms": 0,
+        "duration_ms": 42,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "protocol": "HTTP/1.1",
+          "tls": "TLSv1.3",
+          "merchant_id": "merchant_demo"
+        }
+      },
+      {
+        "span_id": "sp_9d527f",
+        "parent_span_id": "sp_9f23e2",
+        "service": "payment_service",
+        "operation": "GATEWAY_CAPTURE_VERIFICATION",
+        "start_offset_ms": 42,
+        "duration_ms": 108,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "gateway": "Razorpay",
+          "payment_status": "SUCCESS",
+          "funds_captured": true
+        }
+      },
+      {
+        "span_id": "sp_d29bdb",
+        "parent_span_id": "sp_9d527f",
+        "service": "webhook_service",
+        "operation": "FORWARD_WEBHOOK_TO_MERCHANT",
+        "start_offset_ms": 150,
+        "duration_ms": 504,
+        "status": "TIMEOUT",
+        "status_code": 504,
+        "tags": {
+          "endpoint": "payment-webhook",
+          "hmac_verified": true,
+          "http_status": 504
+        }
+      },
+      {
+        "span_id": "sp_b21e99",
+        "parent_span_id": "sp_d29bdb",
+        "service": "recovery_ai_engine",
+        "operation": "ROOT_CAUSE_DIAGNOSTICS_&_POLICY_GATE",
+        "start_offset_ms": 654,
+        "duration_ms": 138,
+        "status": "SUCCESS",
+        "status_code": 200,
+        "tags": {
+          "confidence": 88,
+          "decision": "AUTO_RECOVER"
+        }
+      },
+      {
+        "span_id": "sp_6ba54f",
+        "parent_span_id": "sp_b21e99",
+        "service": "merchant_api",
+        "operation": "ORDER_CREATION_SYNC",
+        "start_offset_ms": 792,
+        "duration_ms": 180,
+        "status": "PENDING",
+        "status_code": 504,
+        "tags": {
+          "idempotency_key": "pay_test_trace_01_ORD_SYNC",
+          "retry_count": 0
+        }
+      }
+    ],
+    "ai_diagnostics": {
+      "model_latency_ms": 240,
+      "tokens_used": 412,
+      "inference_cost_usd": 0.0008,
+      "confidence_score": 88,
+      "telemetry_source": "MOCKED_FOR_DEMO",
+      "mock_indicator": true
+    },
+    "created_at": "2026-09-04T16:53:30.681547+00:00"
+  }
+}

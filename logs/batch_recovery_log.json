@@ -1,0 +1,52 @@
+[
+    {
+        "payment_id": "pay_001",
+        "amount": 8400,
+        "root_cause": "Merchant server timeout after webhook delivery",
+        "confidence": 88,
+        "recovery_key": "pay_001_ORD_001_ORDER_SYNC_v1",
+        "decision": "AUTO RECOVERY",
+        "recovery_status": "STOPPED",
+        "revenue_recovered": 0
+    },
+    {
+        "payment_id": "pay_002",
+        "amount": 2500,
+        "root_cause": "Merchant server timeout after webhook delivery",
+        "confidence": 60,
+        "recovery_key": "pay_002_ORD_002_ORDER_SYNC_v1",
+        "decision": "HUMAN REVIEW",
+        "recovery_status": "AWAITING_REVIEW",
+        "revenue_recovered": 0
+    },
+    {
+        "payment_id": "pay_003",
+        "amount": 12000,
+        "root_cause": "Merchant server error during webhook processing",
+        "confidence": 35,
+        "recovery_key": "pay_003_ORD_003_ORDER_SYNC_v1",
+        "decision": "STOP",
+        "recovery_status": "STOPPED",
+        "revenue_recovered": 0
+    },
+    {
+        "payment_id": "pay_004",
+        "amount": 5600,
+        "root_cause": "Merchant server timeout after webhook delivery",
+        "confidence": 88,
+        "recovery_key": "pay_004_ORD_004_ORDER_SYNC_v1",
+        "decision": "AUTO RECOVERY",
+        "recovery_status": "RECOVERED",
+        "revenue_recovered": 5600
+    },
+    {
+        "payment_id": "pay_005",
+        "amount": 3100,
+        "root_cause": "Merchant server timeout after webhook delivery",
+        "confidence": 60,
+        "recovery_key": "pay_005_ORD_005_ORDER_SYNC_v1",
+        "decision": "HUMAN REVIEW",
+        "recovery_status": "AWAITING_REVIEW",
+        "revenue_recovered": 0
+    }
+]

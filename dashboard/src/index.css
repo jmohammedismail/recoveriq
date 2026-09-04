@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  ::selection {
+    background: rgba(37, 99, 235, 0.15);
+    color: #1d4ed8;
+  }
+}
+
+@layer components {
+  /* Clean Fintech Card / Panel */
+  .panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.875rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .panel:hover {
+    border-color: #cbd5e1;
+  }
+
+  .panel-header {
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-top-left-radius: 0.875rem;
+    border-top-right-radius: 0.875rem;
+  }
+
+  .label-xs {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .label-sm {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: #475569;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: #334155;
+  }
+
+  /* Status Badges - Razorpay Fintech Standard */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.2rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .badge-green {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  .badge-amber {
+    background-color: #fffbeb;
+    color: #92400e;
+    border: 1px solid #fde68a;
+  }
+
+  .badge-red {
+    background-color: #fff1f2;
+    color: #9f1239;
+    border: 1px solid #fecdd3;
+  }
+
+  .badge-blue {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+  }
+
+  .badge-orange {
+    background-color: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+  }
+
+  .badge-slate {
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+  }
+
+  .badge-purple {
+    background-color: #f5f3ff;
+    color: #5b21b6;
+    border: 1px solid #ddd6fe;
+  }
+
+  /* Navigation Tabs */
+  .nav-tab {
+    padding: 0.4rem 0.875rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    border-radius: 0.5rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+
+  .nav-tab:hover {
+    color: #0f172a;
+    background-color: #e2e8f0;
+  }
+
+  .nav-tab.active {
+    color: #1d4ed8;
+    font-weight: 700;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  /* Table Row Hover */
+  .incident-row {
+    transition: background-color 0.15s ease;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .incident-row:hover {
+    background-color: #f8fafc;
+  }
+
+  .incident-row.selected {
+    background-color: #eff6ff;
+    border-left: 3px solid #2563eb;
+  }
+}

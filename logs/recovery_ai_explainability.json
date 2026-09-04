@@ -1,0 +1,143 @@
+{
+  "pay_test_auto_exp": {
+    "explanation_id": "exp_pay_test_auto_exp_d268a9",
+    "payment_id": "pay_test_auto_exp",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "trace_id": "tr_pay_test_auto_exp_93d67455",
+    "decision": "AUTO_RECOVER",
+    "confidence": 88.0,
+    "decision_threshold": 85.0,
+    "risk_level": "LOW",
+    "recommended_action": "EXECUTE_IDEMPOTENT_WEBHOOK_REPLAY",
+    "why_this_decision": "High confidence (88.0% >= 85.0%) diagnosis confirms a transient merchant timeout with funds captured by gateway. Autonomous replay with deterministic idempotency key is safe to execute.",
+    "why_not_auto_recover": [],
+    "evidence": [
+      "HTTP 504 Gateway Timeout detected from merchant endpoint",
+      "Retry buffer: 0/2 attempts consumed",
+      "Merchant endpoint health: HEALTHY",
+      "Payment gateway status: SUCCESS (Funds captured)",
+      "Merchant order state: NOT_CREATED (Order exists: False)",
+      "Database sync status: PENDING",
+      "Inbound webhook security: VERIFIED (HMAC-SHA256)",
+      "Circuit breaker status: CLOSED"
+    ],
+    "subsystem_context": {
+      "http_status": 504,
+      "retry_count": 0,
+      "merchant_health": "HEALTHY",
+      "circuit_state": "CLOSED",
+      "webhook_verified": true,
+      "gateway_status": "SUCCESS",
+      "merchant_order_exists": false
+    },
+    "evaluated_at": "2026-09-04T16:53:30.554920+00:00"
+  },
+  "pay_test_hr_exp": {
+    "explanation_id": "exp_pay_test_hr_exp_7b08c4",
+    "payment_id": "pay_test_hr_exp",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "trace_id": "tr_pay_test_hr_exp_a586b4f9",
+    "decision": "HUMAN_REVIEW",
+    "confidence": 60.0,
+    "decision_threshold": 85.0,
+    "risk_level": "HIGH",
+    "recommended_action": "QUEUE_OPERATOR_REVIEW",
+    "why_this_decision": "Automated retry attempts have been exhausted (2/2). The transaction has been routed to the operator review queue to ensure human supervision.",
+    "why_not_auto_recover": [
+      "Retry count (2) has reached the maximum automated retry threshold (2).",
+      "Operator review required to avoid continuous retry loops on failing endpoints."
+    ],
+    "evidence": [
+      "HTTP 504 Gateway Timeout detected from merchant endpoint",
+      "Retry buffer: 2/2 attempts consumed",
+      "Merchant endpoint health: HEALTHY",
+      "Payment gateway status: SUCCESS (Funds captured)",
+      "Merchant order state: NOT_CREATED (Order exists: False)",
+      "Database sync status: PENDING",
+      "Inbound webhook security: VERIFIED (HMAC-SHA256)",
+      "Circuit breaker status: CLOSED"
+    ],
+    "subsystem_context": {
+      "http_status": 504,
+      "retry_count": 2,
+      "merchant_health": "HEALTHY",
+      "circuit_state": "CLOSED",
+      "webhook_verified": true,
+      "gateway_status": "SUCCESS",
+      "merchant_order_exists": false
+    },
+    "evaluated_at": "2026-09-04T16:53:30.571234+00:00"
+  },
+  "pay_test_stop_dup": {
+    "explanation_id": "exp_pay_test_stop_dup_fb0082",
+    "payment_id": "pay_test_stop_dup",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "trace_id": "tr_pay_test_stop_dup_6ab3c7ae",
+    "decision": "STOP",
+    "confidence": 90.0,
+    "decision_threshold": 85.0,
+    "risk_level": "LOW",
+    "recommended_action": "NO_ACTION_ORDER_ALREADY_EXISTS",
+    "why_this_decision": "The order is already confirmed in the merchant database. Autonomous recovery was halted by safety guardrails to prevent duplicate fulfillment or double-charging.",
+    "why_not_auto_recover": [
+      "Merchant order already confirmed in database; recovery is redundant."
+    ],
+    "evidence": [
+      "HTTP 200 Success recorded from merchant endpoint",
+      "Retry buffer: 0/2 attempts consumed",
+      "Merchant endpoint health: HEALTHY",
+      "Payment gateway status: SUCCESS (Funds captured)",
+      "Merchant order state: NOT_CREATED (Order exists: True)",
+      "Database sync status: SYNCED",
+      "Inbound webhook security: VERIFIED (HMAC-SHA256)",
+      "Circuit breaker status: CLOSED"
+    ],
+    "subsystem_context": {
+      "http_status": 200,
+      "retry_count": 0,
+      "merchant_health": "HEALTHY",
+      "circuit_state": "CLOSED",
+      "webhook_verified": true,
+      "gateway_status": "SUCCESS",
+      "merchant_order_exists": true
+    },
+    "evaluated_at": "2026-09-04T16:53:30.584710+00:00"
+  },
+  "pay_005": {
+    "explanation_id": "exp_pay_005_29bd3e",
+    "payment_id": "pay_005",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "trace_id": "tr_pay_005_bdf039ef",
+    "decision": "AUTO_RECOVER",
+    "confidence": 88.0,
+    "decision_threshold": 85.0,
+    "risk_level": "LOW",
+    "recommended_action": "EXECUTE_IDEMPOTENT_WEBHOOK_REPLAY",
+    "why_this_decision": "High confidence (88.0% >= 85.0%) diagnosis confirms a transient merchant timeout with funds captured by gateway. Autonomous replay with deterministic idempotency key is safe to execute.",
+    "why_not_auto_recover": [],
+    "evidence": [
+      "HTTP 504 Gateway Timeout detected from merchant endpoint",
+      "Retry buffer: 0/2 attempts consumed",
+      "Merchant endpoint health: HEALTHY",
+      "Payment gateway status: SUCCESS (Funds captured)",
+      "Merchant order state: NOT_CREATED (Order exists: False)",
+      "Database sync status: PENDING",
+      "Inbound webhook security: VERIFIED (HMAC-SHA256)",
+      "Circuit breaker status: CLOSED"
+    ],
+    "subsystem_context": {
+      "http_status": 504,
+      "retry_count": 0,
+      "merchant_health": "HEALTHY",
+      "circuit_state": "CLOSED",
+      "webhook_verified": true,
+      "gateway_status": "SUCCESS",
+      "merchant_order_exists": false
+    },
+    "evaluated_at": "2026-09-01T11:59:22.488890+00:00"
+  }
+}

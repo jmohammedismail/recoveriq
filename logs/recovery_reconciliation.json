@@ -1,0 +1,441 @@
+{
+  "pay_test_recon_mismatch": {
+    "reconciliation_id": "rec_pay_test_recon_mismatch_fb0373",
+    "payment_id": "pay_test_recon_mismatch",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_test_recon_mismatch",
+    "amount": 3100.0,
+    "trace_id": "tr_pay_test_recon_mismatch_831ab547",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "GATEWAY_SUCCESS_MERCHANT_NOT_CREATED",
+    "recommended_action": "IDEMPOTENT_ORDER_SYNC",
+    "reason": "Payment captured successfully by Gateway (\u20b93,100.00), but merchant order (ORD_pay_test_recon_mismatch) was not created due to webhook delivery timeout.",
+    "discrepancies": [
+      "Gateway: Captured \u2713 vs Merchant: Order Not Created \u2717",
+      "Database: Marked PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "NOT_CREATED",
+        "order_exists": false,
+        "verified": false
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:53:30.599343+00:00"
+  },
+  "pay_test_recon_contradiction": {
+    "reconciliation_id": "rec_pay_test_recon_contradiction_487fd6",
+    "payment_id": "pay_test_recon_contradiction",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_test_recon_contradiction",
+    "amount": 7500.0,
+    "trace_id": "tr_pay_test_recon_contradiction_c447d57f",
+    "reconciliation_status": "CONTRADICTION",
+    "contradiction_type": "MERCHANT_CREATED_GATEWAY_FAILED",
+    "recommended_action": "HALT_FULFILLMENT_AND_REVERSE_ORDER",
+    "reason": "Critical Risk: Merchant order ORD_pay_test_recon_contradiction exists in database, but Gateway reports FAILED. Order may be fulfilled without captured funds.",
+    "discrepancies": [
+      "Merchant: Order Exists \u2713 vs Gateway: FAILED \u2717"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "FAILED",
+        "verified": false
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "FAILED",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:53:30.617336+00:00"
+  },
+  "pay_test_recon_read_only": {
+    "reconciliation_id": "rec_pay_test_recon_read_only_24a22e",
+    "payment_id": "pay_test_recon_read_only",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_test_recon_read_only",
+    "amount": 0.0,
+    "trace_id": "tr_pay_test_recon_read_only_15b55fc0",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "GATEWAY_SUCCESS_MERCHANT_NOT_CREATED",
+    "recommended_action": "IDEMPOTENT_ORDER_SYNC",
+    "reason": "Payment captured successfully by Gateway (\u20b90.00), but merchant order (ORD_pay_test_recon_read_only) was not created due to webhook delivery timeout.",
+    "discrepancies": [
+      "Gateway: Captured \u2713 vs Merchant: Order Not Created \u2717",
+      "Database: Marked PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "NOT_CREATED",
+        "order_exists": false,
+        "verified": false
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:53:30.641231+00:00"
+  },
+  "pay_004": {
+    "reconciliation_id": "rec_pay_004_8697d9",
+    "payment_id": "pay_004",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_004",
+    "amount": 0.0,
+    "trace_id": "tr_pay_004_22f5ac57",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "GATEWAY_SUCCESS_MERCHANT_NOT_CREATED",
+    "recommended_action": "IDEMPOTENT_ORDER_SYNC",
+    "reason": "Payment captured successfully by Gateway (\u20b90.00), but merchant order (ORD_pay_004) was not created due to webhook delivery timeout.",
+    "discrepancies": [
+      "Gateway: Captured \u2713 vs Merchant: Order Not Created \u2717",
+      "Database: Marked PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "NOT_CREATED",
+        "order_exists": false,
+        "verified": false
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-01T11:36:20.467447+00:00"
+  },
+  "pay_002": {
+    "reconciliation_id": "rec_pay_002_e5f865",
+    "payment_id": "pay_002",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_002",
+    "amount": 2500.0,
+    "trace_id": "tr_pay_002_59c25d47",
+    "reconciliation_status": "PENDING",
+    "contradiction_type": "NONE",
+    "recommended_action": "MONITOR_IN_FLIGHT_WORKFLOW",
+    "reason": "Payment workflow is currently in flight or awaiting downstream signals.",
+    "discrepancies": [],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "HUMAN_REVIEW",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:53:30.815585+00:00"
+  },
+  "pay_005": {
+    "reconciliation_id": "rec_pay_005_431d8b",
+    "payment_id": "pay_005",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_005",
+    "amount": 3100.0,
+    "trace_id": "tr_pay_005_13045347",
+    "reconciliation_status": "PENDING",
+    "contradiction_type": "NONE",
+    "recommended_action": "MONITOR_IN_FLIGHT_WORKFLOW",
+    "reason": "Payment workflow is currently in flight or awaiting downstream signals.",
+    "discrepancies": [],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "HUMAN_REVIEW",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:53:30.867727+00:00"
+  },
+  "pay_batch_item_1": {
+    "reconciliation_id": "rec_pay_batch_item_1_8f9c26",
+    "payment_id": "pay_batch_item_1",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_batch_item_1",
+    "amount": 5600.0,
+    "trace_id": "tr_pay_batch_item_1_85344151",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "DB_PENDING_GATEWAY_SUCCESS",
+    "recommended_action": "SYNCHRONIZE_INTERNAL_LEDGER",
+    "reason": "Gateway captured funds successfully, but internal ledger is still in PENDING state.",
+    "discrepancies": [
+      "Internal DB: PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-01T11:36:20.590045+00:00"
+  },
+  "pay_batch_item_2": {
+    "reconciliation_id": "rec_pay_batch_item_2_44a3c0",
+    "payment_id": "pay_batch_item_2",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_batch_item_2",
+    "amount": 5600.0,
+    "trace_id": "tr_pay_batch_item_2_30704899",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "DB_PENDING_GATEWAY_SUCCESS",
+    "recommended_action": "SYNCHRONIZE_INTERNAL_LEDGER",
+    "reason": "Gateway captured funds successfully, but internal ledger is still in PENDING state.",
+    "discrepancies": [
+      "Internal DB: PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-01T11:36:20.663697+00:00"
+  },
+  "pay_101": {
+    "reconciliation_id": "rec_pay_101_f8b498",
+    "payment_id": "pay_101",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_101",
+    "amount": 5600.0,
+    "trace_id": "tr_pay_101_293975fe",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "DB_PENDING_GATEWAY_SUCCESS",
+    "recommended_action": "SYNCHRONIZE_INTERNAL_LEDGER",
+    "reason": "Gateway captured funds successfully, but internal ledger is still in PENDING state.",
+    "discrepancies": [
+      "Internal DB: PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:52:29.632007+00:00"
+  },
+  "pay_105": {
+    "reconciliation_id": "rec_pay_105_5730ad",
+    "payment_id": "pay_105",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_105",
+    "amount": 5600.0,
+    "trace_id": "tr_pay_105_17f0e20c",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "DB_PENDING_GATEWAY_SUCCESS",
+    "recommended_action": "SYNCHRONIZE_INTERNAL_LEDGER",
+    "reason": "Gateway captured funds successfully, but internal ledger is still in PENDING state.",
+    "discrepancies": [
+      "Internal DB: PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T16:52:29.853439+00:00"
+  },
+  "pay_106": {
+    "reconciliation_id": "rec_pay_106_27dadf",
+    "payment_id": "pay_106",
+    "merchant_id": "merchant_demo",
+    "endpoint": "payment-webhook",
+    "order_id": "ORD_pay_106",
+    "amount": 5600.0,
+    "trace_id": "tr_pay_106_6eca9a8c",
+    "reconciliation_status": "MISMATCH",
+    "contradiction_type": "DB_PENDING_GATEWAY_SUCCESS",
+    "recommended_action": "SYNCHRONIZE_INTERNAL_LEDGER",
+    "reason": "Gateway captured funds successfully, but internal ledger is still in PENDING state.",
+    "discrepancies": [
+      "Internal DB: PENDING \u26a0 vs Gateway: SUCCESS \u2713"
+    ],
+    "vectors": {
+      "gateway": {
+        "system": "Payment Gateway (Razorpay)",
+        "status": "SUCCESS",
+        "verified": true
+      },
+      "merchant": {
+        "system": "Merchant Order DB",
+        "status": "CREATED",
+        "order_exists": true,
+        "verified": true
+      },
+      "database": {
+        "system": "Internal Ledger / State Machine",
+        "status": "PENDING",
+        "verified": false
+      },
+      "webhook": {
+        "system": "Inbound Webhook Stream",
+        "status": "DELAYED",
+        "verified": false
+      }
+    },
+    "evaluated_at": "2026-09-04T15:52:19.533110+00:00"
+  }
+}

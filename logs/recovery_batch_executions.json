@@ -1,0 +1,266 @@
+{
+  "batch_direct_test": {
+    "execution_id": "bexec_batch_direct_test_d9c4f6",
+    "batch_id": "batch_direct_test",
+    "operator_id": "operator_batch_lead",
+    "total_selected": 2,
+    "total_recovered_amount": 5600.0,
+    "success_count": 2,
+    "failed_count": 0,
+    "results": [
+      {
+        "payment_id": "pay_002",
+        "amount": 2500.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      },
+      {
+        "payment_id": "pay_005",
+        "amount": 3100.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      }
+    ],
+    "executed_at": "2026-09-01T11:26:01.819029+00:00"
+  },
+  "batch_exec_test": {
+    "execution_id": "bexec_batch_exec_test_dfdeb1",
+    "batch_id": "batch_exec_test",
+    "operator_id": "operator_batch_lead",
+    "total_selected": 2,
+    "total_recovered_amount": 5600.0,
+    "success_count": 2,
+    "failed_count": 0,
+    "results": [
+      {
+        "payment_id": "pay_002",
+        "amount": 2500.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Payment state is HUMAN_REVIEW; requires operator approval before dispatch."
+      },
+      {
+        "payment_id": "pay_005",
+        "amount": 3100.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Payment state is HUMAN_REVIEW; requires operator approval before dispatch."
+      }
+    ],
+    "executed_at": "2026-09-04T16:53:30.779246+00:00"
+  },
+  "batch_test_1": {
+    "execution_id": "bexec_batch_test_1_f2b254",
+    "batch_id": "batch_test_1",
+    "operator_id": "operator_batch_lead",
+    "total_selected": 2,
+    "total_recovered_amount": 11200.0,
+    "success_count": 2,
+    "failed_count": 0,
+    "results": [
+      {
+        "payment_id": "pay_101",
+        "amount": 5600.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      },
+      {
+        "payment_id": "pay_105",
+        "amount": 5600.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      }
+    ],
+    "executed_at": "2026-09-04T16:52:29.453293+00:00"
+  },
+  "batch_active": {
+    "execution_id": "bexec_batch_active_048495",
+    "batch_id": "batch_active",
+    "operator_id": "operator_batch_lead",
+    "total_selected": 3,
+    "total_recovered_amount": 16800.0,
+    "success_count": 3,
+    "failed_count": 0,
+    "results": [
+      {
+        "payment_id": "pay_101",
+        "amount": 5600.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      },
+      {
+        "payment_id": "pay_105",
+        "amount": 5600.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      },
+      {
+        "payment_id": "pay_106",
+        "amount": 5600.0,
+        "stages": [
+          {
+            "stage": "INVESTIGATION",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "RECOVERY_ATTEMPT",
+            "status": "COMPLETED"
+          },
+          {
+            "stage": "POST_VERIFICATION",
+            "status": "VERIFIED_SUCCESS"
+          },
+          {
+            "stage": "RECONCILIATION",
+            "status": "RECONCILED"
+          }
+        ],
+        "final_status": "RECOVERED",
+        "reason": "Automatic recovery executed and verified successfully (HTTP 200)."
+      }
+    ],
+    "executed_at": "2026-09-04T15:52:18.957635+00:00"
+  }
+}

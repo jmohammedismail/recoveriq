@@ -1,0 +1,16 @@
+[
+    {
+        "payment_id": "pay_001",
+        "order_id": "ORD_001",
+        "amount": 8400,
+        "payment_status": "SUCCESS",
+        "webhook_status": "DELAYED",
+        "http_status": 504,
+        "retry_count": 0,
+        "root_cause": "Merchant server timeout after webhook delivery",
+        "confidence": 88,
+        "recovery_key": "pay_001_ORD_001_ORDER_SYNC",
+        "recovery_status": "SUCCESS",
+        "revenue_recovered": 8400
+    }
+]

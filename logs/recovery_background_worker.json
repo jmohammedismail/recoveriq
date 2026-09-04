@@ -1,0 +1,913 @@
+{
+  "metadata": {
+    "worker_id": "worker_f715e47c",
+    "current_state": "STOPPED",
+    "started_at": "2026-09-04T16:52:37.406145+00:00",
+    "stopped_at": "2026-09-04T16:52:37.483237+00:00",
+    "last_cycle_at": "2026-09-04T16:52:42.079963+00:00",
+    "next_cycle_at": "2026-09-04T16:52:52.079963+00:00",
+    "cycle_count": 202,
+    "successful_cycles": 202,
+    "failed_cycles": 0,
+    "last_error": null,
+    "configured_interval_seconds": 10
+  },
+  "history": [
+    {
+      "event_id": "wdevt_525efaa54d",
+      "worker_id": "worker_bbb5e2e8",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_bbb5e2e8 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:26:14.375953+00:00"
+    },
+    {
+      "event_id": "wdevt_7874b9ecb2",
+      "worker_id": "worker_bbb5e2e8",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:26:14.392816+00:00"
+    },
+    {
+      "event_id": "wdevt_7b6561ff7b",
+      "worker_id": "worker_bbb5e2e8",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:26:14.394001+00:00"
+    },
+    {
+      "event_id": "wdevt_e4304b2c55",
+      "worker_id": "worker_bbb5e2e8",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_bbb5e2e8 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:26:14.881671+00:00"
+    },
+    {
+      "event_id": "wdevt_76b4fc4125",
+      "worker_id": "worker_04187b3e",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_04187b3e started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:20.011136+00:00"
+    },
+    {
+      "event_id": "wdevt_348bb0e845",
+      "worker_id": "worker_04187b3e",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:20.028485+00:00"
+    },
+    {
+      "event_id": "wdevt_50e1e93185",
+      "worker_id": "worker_04187b3e",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:20.029473+00:00"
+    },
+    {
+      "event_id": "wdevt_b2fdd3864e",
+      "worker_id": "worker_04187b3e",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_04187b3e stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:20.548763+00:00"
+    },
+    {
+      "event_id": "wdevt_efcb77f6eb",
+      "worker_id": "worker_ec42c0aa",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_ec42c0aa started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:54.325224+00:00"
+    },
+    {
+      "event_id": "wdevt_f77a829cb9",
+      "worker_id": "worker_ec42c0aa",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:54.340855+00:00"
+    },
+    {
+      "event_id": "wdevt_b5624e4dca",
+      "worker_id": "worker_ec42c0aa",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:54.342066+00:00"
+    },
+    {
+      "event_id": "wdevt_b1404a0fcc",
+      "worker_id": "worker_ec42c0aa",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_ec42c0aa stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:27:54.845657+00:00"
+    },
+    {
+      "event_id": "wdevt_137a21aa7c",
+      "worker_id": "worker_8bff3308",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_8bff3308 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:29:23.986027+00:00"
+    },
+    {
+      "event_id": "wdevt_70a0430287",
+      "worker_id": "worker_8bff3308",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:29:23.999149+00:00"
+    },
+    {
+      "event_id": "wdevt_de24b05f06",
+      "worker_id": "worker_8bff3308",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:29:23.999880+00:00"
+    },
+    {
+      "event_id": "wdevt_04614a1264",
+      "worker_id": "worker_8bff3308",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_8bff3308 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:29:24.490712+00:00"
+    },
+    {
+      "event_id": "wdevt_1d768dad55",
+      "worker_id": "worker_11a1e9e9",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_11a1e9e9 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:30:30.628342+00:00"
+    },
+    {
+      "event_id": "wdevt_82cfbc6303",
+      "worker_id": "worker_11a1e9e9",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:30:30.640801+00:00"
+    },
+    {
+      "event_id": "wdevt_628d9faeed",
+      "worker_id": "worker_11a1e9e9",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:30:30.641574+00:00"
+    },
+    {
+      "event_id": "wdevt_46e6536ca4",
+      "worker_id": "worker_11a1e9e9",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_11a1e9e9 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:30:31.138316+00:00"
+    },
+    {
+      "event_id": "wdevt_aae5e30de9",
+      "worker_id": "worker_d2914e53",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_d2914e53 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:31:21.294536+00:00"
+    },
+    {
+      "event_id": "wdevt_844a4ce6e9",
+      "worker_id": "worker_d2914e53",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:31:21.308834+00:00"
+    },
+    {
+      "event_id": "wdevt_ba2b39e402",
+      "worker_id": "worker_d2914e53",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:31:21.309918+00:00"
+    },
+    {
+      "event_id": "wdevt_847ffb8485",
+      "worker_id": "worker_d2914e53",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_d2914e53 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:31:21.805389+00:00"
+    },
+    {
+      "event_id": "wdevt_290ae54421",
+      "worker_id": "worker_0c7c3d3e",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_0c7c3d3e started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:34:07.773114+00:00"
+    },
+    {
+      "event_id": "wdevt_38a2bac750",
+      "worker_id": "worker_0c7c3d3e",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:34:07.783565+00:00"
+    },
+    {
+      "event_id": "wdevt_bbca998a23",
+      "worker_id": "worker_0c7c3d3e",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:34:07.784389+00:00"
+    },
+    {
+      "event_id": "wdevt_7d4ce32302",
+      "worker_id": "worker_0c7c3d3e",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_0c7c3d3e stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T09:34:08.274612+00:00"
+    },
+    {
+      "event_id": "wdevt_82a4177adb",
+      "worker_id": "worker_22d8c918",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_22d8c918 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:17:52.868835+00:00"
+    },
+    {
+      "event_id": "wdevt_03339c85e2",
+      "worker_id": "worker_22d8c918",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:17:52.892608+00:00"
+    },
+    {
+      "event_id": "wdevt_a794c44927",
+      "worker_id": "worker_22d8c918",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:17:52.893637+00:00"
+    },
+    {
+      "event_id": "wdevt_23b2a710cd",
+      "worker_id": "worker_22d8c918",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_22d8c918 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:17:52.903014+00:00"
+    },
+    {
+      "event_id": "wdevt_1ee2538694",
+      "worker_id": "worker_24f434d4",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_24f434d4 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:53:44.100644+00:00"
+    },
+    {
+      "event_id": "wdevt_89bc1071c0",
+      "worker_id": "worker_24f434d4",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:53:44.119736+00:00"
+    },
+    {
+      "event_id": "wdevt_efe109f1ff",
+      "worker_id": "worker_24f434d4",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:53:44.120454+00:00"
+    },
+    {
+      "event_id": "wdevt_accf01f8e1",
+      "worker_id": "worker_24f434d4",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_24f434d4 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T10:53:44.129982+00:00"
+    },
+    {
+      "event_id": "wdevt_177f489e42",
+      "worker_id": "worker_897b1cbe",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_897b1cbe started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:25:06.003285+00:00"
+    },
+    {
+      "event_id": "wdevt_263959fde8",
+      "worker_id": "worker_897b1cbe",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:25:06.023088+00:00"
+    },
+    {
+      "event_id": "wdevt_98b5ba7f75",
+      "worker_id": "worker_897b1cbe",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:25:06.027211+00:00"
+    },
+    {
+      "event_id": "wdevt_bca942586f",
+      "worker_id": "worker_897b1cbe",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_897b1cbe stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:25:06.033772+00:00"
+    },
+    {
+      "event_id": "wdevt_463345378a",
+      "worker_id": "worker_07fe275b",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_07fe275b started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:26:47.002488+00:00"
+    },
+    {
+      "event_id": "wdevt_9c9fdf0f95",
+      "worker_id": "worker_07fe275b",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:26:47.014559+00:00"
+    },
+    {
+      "event_id": "wdevt_c783850933",
+      "worker_id": "worker_07fe275b",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:26:47.022868+00:00"
+    },
+    {
+      "event_id": "wdevt_f8591fa5a5",
+      "worker_id": "worker_07fe275b",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_07fe275b stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:26:47.035254+00:00"
+    },
+    {
+      "event_id": "wdevt_849ed4e6ed",
+      "worker_id": "worker_8208392f",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_8208392f started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:13.193450+00:00"
+    },
+    {
+      "event_id": "wdevt_da6d5cf5f1",
+      "worker_id": "worker_8208392f",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:13.214800+00:00"
+    },
+    {
+      "event_id": "wdevt_eff6e35f04",
+      "worker_id": "worker_8208392f",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:13.221630+00:00"
+    },
+    {
+      "event_id": "wdevt_0ba57002c4",
+      "worker_id": "worker_8208392f",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_8208392f stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:13.225574+00:00"
+    },
+    {
+      "event_id": "wdevt_5f88d9a83d",
+      "worker_id": "worker_c150cb2d",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_c150cb2d started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:59.943033+00:00"
+    },
+    {
+      "event_id": "wdevt_84d58392b6",
+      "worker_id": "worker_c150cb2d",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:59.957234+00:00"
+    },
+    {
+      "event_id": "wdevt_65e5b1dc80",
+      "worker_id": "worker_c150cb2d",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:59.958191+00:00"
+    },
+    {
+      "event_id": "wdevt_35b087631a",
+      "worker_id": "worker_c150cb2d",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_c150cb2d stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T11:34:59.977168+00:00"
+    },
+    {
+      "event_id": "wdevt_c91a870a90",
+      "worker_id": "worker_0ca859d5",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_0ca859d5 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:21:29.948774+00:00"
+    },
+    {
+      "event_id": "wdevt_a7dc627cfa",
+      "worker_id": "worker_0ca859d5",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:21:29.979416+00:00"
+    },
+    {
+      "event_id": "wdevt_e7a2dcad14",
+      "worker_id": "worker_0ca859d5",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:21:29.984835+00:00"
+    },
+    {
+      "event_id": "wdevt_ab1598d5fc",
+      "worker_id": "worker_0ca859d5",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_0ca859d5 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:21:29.993534+00:00"
+    },
+    {
+      "event_id": "wdevt_8a921fb3dd",
+      "worker_id": "worker_7b50bebd",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_7b50bebd started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:23:08.754764+00:00"
+    },
+    {
+      "event_id": "wdevt_a6953f1453",
+      "worker_id": "worker_7b50bebd",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:23:08.777334+00:00"
+    },
+    {
+      "event_id": "wdevt_4faef54c0d",
+      "worker_id": "worker_7b50bebd",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:23:08.783187+00:00"
+    },
+    {
+      "event_id": "wdevt_52a76da6fc",
+      "worker_id": "worker_7b50bebd",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_7b50bebd stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:23:08.805639+00:00"
+    },
+    {
+      "event_id": "wdevt_e99a912793",
+      "worker_id": "worker_d49088f7",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_d49088f7 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:37:34.338157+00:00"
+    },
+    {
+      "event_id": "wdevt_d3df385189",
+      "worker_id": "worker_d49088f7",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:37:34.412002+00:00"
+    },
+    {
+      "event_id": "wdevt_f05f3053d5",
+      "worker_id": "worker_d49088f7",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:37:34.427758+00:00"
+    },
+    {
+      "event_id": "wdevt_0e325b7e4c",
+      "worker_id": "worker_d49088f7",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_d49088f7 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T12:37:34.484755+00:00"
+    },
+    {
+      "event_id": "wdevt_afe997a2df",
+      "worker_id": "worker_2b345196",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_2b345196 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:50:57.765178+00:00"
+    },
+    {
+      "event_id": "wdevt_495c2e86bd",
+      "worker_id": "worker_2b345196",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:50:57.789187+00:00"
+    },
+    {
+      "event_id": "wdevt_6b5b78716d",
+      "worker_id": "worker_2b345196",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:50:57.797822+00:00"
+    },
+    {
+      "event_id": "wdevt_20971f4b6f",
+      "worker_id": "worker_2b345196",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_2b345196 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:50:57.800475+00:00"
+    },
+    {
+      "event_id": "wdevt_c8cf98ab00",
+      "worker_id": "worker_4f5d7509",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_4f5d7509 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:53:21.007153+00:00"
+    },
+    {
+      "event_id": "wdevt_42e5d76629",
+      "worker_id": "worker_4f5d7509",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:53:21.031755+00:00"
+    },
+    {
+      "event_id": "wdevt_f35260d273",
+      "worker_id": "worker_4f5d7509",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:53:21.039908+00:00"
+    },
+    {
+      "event_id": "wdevt_776756c7fb",
+      "worker_id": "worker_4f5d7509",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_4f5d7509 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-01T20:53:21.046837+00:00"
+    },
+    {
+      "event_id": "wdevt_095b9d996b",
+      "worker_id": "worker_3025bee1",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_3025bee1 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:45:07.568480+00:00"
+    },
+    {
+      "event_id": "wdevt_f058f89acd",
+      "worker_id": "worker_3025bee1",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:45:07.600013+00:00"
+    },
+    {
+      "event_id": "wdevt_e23ae5a9ed",
+      "worker_id": "worker_3025bee1",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:45:07.609082+00:00"
+    },
+    {
+      "event_id": "wdevt_f931f49dcc",
+      "worker_id": "worker_3025bee1",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_3025bee1 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:45:07.650908+00:00"
+    },
+    {
+      "event_id": "wdevt_f03f7bfdf8",
+      "worker_id": "worker_469bb7e5",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_469bb7e5 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:47:37.256205+00:00"
+    },
+    {
+      "event_id": "wdevt_12b8ecc263",
+      "worker_id": "worker_469bb7e5",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:47:37.282091+00:00"
+    },
+    {
+      "event_id": "wdevt_c89a0ae56e",
+      "worker_id": "worker_469bb7e5",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:47:37.292375+00:00"
+    },
+    {
+      "event_id": "wdevt_6a644836d5",
+      "worker_id": "worker_469bb7e5",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_469bb7e5 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:47:37.313690+00:00"
+    },
+    {
+      "event_id": "wdevt_70231bf513",
+      "worker_id": "worker_61be51c8",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_61be51c8 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:50:01.366672+00:00"
+    },
+    {
+      "event_id": "wdevt_b5ab26e099",
+      "worker_id": "worker_61be51c8",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:50:01.400377+00:00"
+    },
+    {
+      "event_id": "wdevt_0d85095fb7",
+      "worker_id": "worker_61be51c8",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:50:01.410279+00:00"
+    },
+    {
+      "event_id": "wdevt_a6f5ae6222",
+      "worker_id": "worker_61be51c8",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_61be51c8 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T15:50:01.454092+00:00"
+    },
+    {
+      "event_id": "wdevt_506fc4a0e2",
+      "worker_id": "worker_7a06f49b",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_7a06f49b started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:09:37.337227+00:00"
+    },
+    {
+      "event_id": "wdevt_7e41fcd6c4",
+      "worker_id": "worker_7a06f49b",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:09:37.365721+00:00"
+    },
+    {
+      "event_id": "wdevt_fd3ff66867",
+      "worker_id": "worker_7a06f49b",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:09:37.371398+00:00"
+    },
+    {
+      "event_id": "wdevt_5619fa373b",
+      "worker_id": "worker_7a06f49b",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_7a06f49b stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:09:37.396403+00:00"
+    },
+    {
+      "event_id": "wdevt_cecc9b6577",
+      "worker_id": "worker_31c9e444",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_31c9e444 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:15:08.007298+00:00"
+    },
+    {
+      "event_id": "wdevt_e1e527555f",
+      "worker_id": "worker_31c9e444",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:15:08.032030+00:00"
+    },
+    {
+      "event_id": "wdevt_3f0de6a030",
+      "worker_id": "worker_31c9e444",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:15:08.038852+00:00"
+    },
+    {
+      "event_id": "wdevt_424b65d1f8",
+      "worker_id": "worker_31c9e444",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_31c9e444 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:15:08.081626+00:00"
+    },
+    {
+      "event_id": "wdevt_b54cbccc80",
+      "worker_id": "worker_5ccdf6db",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_5ccdf6db started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:22:27.560900+00:00"
+    },
+    {
+      "event_id": "wdevt_4a7ae537d2",
+      "worker_id": "worker_5ccdf6db",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:22:27.597134+00:00"
+    },
+    {
+      "event_id": "wdevt_01f7e1e2a6",
+      "worker_id": "worker_5ccdf6db",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:22:27.603626+00:00"
+    },
+    {
+      "event_id": "wdevt_8acde00956",
+      "worker_id": "worker_5ccdf6db",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_5ccdf6db stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:22:27.616272+00:00"
+    },
+    {
+      "event_id": "wdevt_5aea84889c",
+      "worker_id": "worker_903996fd",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_903996fd started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:31:30.928094+00:00"
+    },
+    {
+      "event_id": "wdevt_d9b177fa93",
+      "worker_id": "worker_903996fd",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:31:30.952515+00:00"
+    },
+    {
+      "event_id": "wdevt_54f0f69f1d",
+      "worker_id": "worker_903996fd",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:31:30.958594+00:00"
+    },
+    {
+      "event_id": "wdevt_a005b01b20",
+      "worker_id": "worker_903996fd",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_903996fd stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:31:30.989136+00:00"
+    },
+    {
+      "event_id": "wdevt_bf9142c625",
+      "worker_id": "worker_3afced93",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_3afced93 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:38:31.955916+00:00"
+    },
+    {
+      "event_id": "wdevt_a3ff636bff",
+      "worker_id": "worker_3afced93",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:38:31.977559+00:00"
+    },
+    {
+      "event_id": "wdevt_c1672a389b",
+      "worker_id": "worker_3afced93",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:38:31.983552+00:00"
+    },
+    {
+      "event_id": "wdevt_094ad916a4",
+      "worker_id": "worker_3afced93",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_3afced93 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:38:32.012046+00:00"
+    },
+    {
+      "event_id": "wdevt_3d631adeec",
+      "worker_id": "worker_5160bc46",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_5160bc46 started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:40:30.433035+00:00"
+    },
+    {
+      "event_id": "wdevt_89a2f60681",
+      "worker_id": "worker_5160bc46",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:40:30.471151+00:00"
+    },
+    {
+      "event_id": "wdevt_e410197377",
+      "worker_id": "worker_5160bc46",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:40:30.482417+00:00"
+    },
+    {
+      "event_id": "wdevt_756b7f3720",
+      "worker_id": "worker_5160bc46",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_5160bc46 stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:40:30.513778+00:00"
+    },
+    {
+      "event_id": "wdevt_b8796b5857",
+      "worker_id": "worker_f715e47c",
+      "event_type": "BACKGROUND_WORKER_STARTED",
+      "description": "Background worker worker_f715e47c started (interval: 10s)",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:52:37.416617+00:00"
+    },
+    {
+      "event_id": "wdevt_19b571c06f",
+      "worker_id": "worker_f715e47c",
+      "event_type": "BACKGROUND_WORKER_PAUSED",
+      "description": "Background worker execution paused.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:52:37.444530+00:00"
+    },
+    {
+      "event_id": "wdevt_20a864955c",
+      "worker_id": "worker_f715e47c",
+      "event_type": "BACKGROUND_WORKER_RESUMED",
+      "description": "Background worker execution resumed.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:52:37.453249+00:00"
+    },
+    {
+      "event_id": "wdevt_bc230f4a15",
+      "worker_id": "worker_f715e47c",
+      "event_type": "BACKGROUND_WORKER_STOPPED",
+      "description": "Background worker worker_f715e47c stopped.",
+      "operator_id": "lead_operator_1",
+      "timestamp": "2026-09-04T16:52:37.483256+00:00"
+    }
+  ]
+}

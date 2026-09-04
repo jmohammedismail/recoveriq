@@ -1,0 +1,11 @@
+{
+  "payment_id": "pay_001",
+  "order_id": "ORD_001",
+  "amount": 8400,
+  "payment_status": "SUCCESS",
+  "webhook_status": "DELAYED",
+  "order_status": "NOT_CREATED",
+  "inventory_status": "NOT_RESERVED",
+  "http_status": 504,
+  "retry_count": 0
+}

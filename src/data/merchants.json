@@ -1,0 +1,12 @@
+[
+  {
+    "id": "merchant_acme_001",
+    "name": "Acme Payments",
+    "email": "demo@acmepayments.com",
+    "password": "demo1234",
+    "role": "MERCHANT_OWNER",
+    "environment": "SANDBOX",
+    "currency": "INR",
+    "created_at": "2026-09-01T00:00:00Z"
+  }
+]
